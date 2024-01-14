@@ -2,3 +2,21 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+app-side-menu {
+    left: 0;
+    &.fullView {
+        left: -300px;
+        transition: all 300ms ease-in-out;
+    }
+}
+
+app-footer {
+    margin-top: auto;
+    margin-left: 300px;
+    transition: all 300ms ease-in-out;
+    &.fullView {
+        margin-left: 0;
+        transition: all 300ms ease-in-out;
+    }
+}

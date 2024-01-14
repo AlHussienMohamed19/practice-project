@@ -1,0 +1,45 @@
+ul {
+    display: flex;
+    list-style: none;
+    a {
+        color: #2e2e2e;
+        text-decoration: none;
+        font-size: 17px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid #dfdfdf;
+        transition: all 300ms ease-in-out;
+        &:hover {
+            color: #c0992f;
+        }
+        &.active {
+            color: #c0992f;
+        }
+    }
+}
+
+li {
+    cursor: pointer;
+    position: relative;
+    .hasItems {
+        transform: rotate(0);
+        transition: all 300ms ease-in-out;
+        font-size: 12px;
+        position: absolute;
+    }
+    ul {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 300ms ease-in-out;
+    }
+    &.active {
+        .hasItems {
+            transform: rotate(-90deg);
+            transition: all 300ms ease-in-out;
+        }
+        ul {
+            max-height: 1000px;
+            transition: all 300ms ease-in-out;
+        }
+    }
+}
