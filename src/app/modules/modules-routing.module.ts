@@ -3,6 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: "calender",
+    loadChildren: () =>
+      import("./calender/calender.module").then(m => m.CalenderModule)
+  },
+  {
     path: "lifeCycle",
     loadChildren: () =>
       import("./life-cycle/life-cycle.module").then(m => m.LifeCycleModule)
