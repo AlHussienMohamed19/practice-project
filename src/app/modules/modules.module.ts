@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ModulesRoutingModule } from './modules-routing.module';
 import { ModulesComponent } from './modules.component';
+import { MyReactiveFormsModule } from './reactive-forms/reactive-forms.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ModulesComponent } from './modules.component';
   ],
   imports: [
     CommonModule,
-    ModulesRoutingModule
+    ModulesRoutingModule,
+    MyReactiveFormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

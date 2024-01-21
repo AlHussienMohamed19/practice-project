@@ -7,6 +7,11 @@ const routes: Routes = [
     loadChildren: () =>
       import("./life-cycle/life-cycle.module").then(m => m.LifeCycleModule)
   },
+  {
+    path: "reactiveForms",
+    loadChildren: () =>
+      import("./reactive-forms/reactive-forms.module").then(m => m.MyReactiveFormsModule)
+  },
   { path: '**', redirectTo: "pages" }
 ];
 
