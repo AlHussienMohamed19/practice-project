@@ -10,7 +10,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'calender1',
+    path: 'calender1/:year',
     component: Calender1Component,
     pathMatch: 'full'
   },

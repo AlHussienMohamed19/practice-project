@@ -1,11 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.cal-month-view .cal-day-cell {
+    min-height: 0 !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 app-side-menu {
     left: 0;
+
     &.fullView {
         left: -300px;
         transition: all 300ms ease-in-out;
@@ -19,10 +31,12 @@ app-side-menu {
 .main {
     margin: 112px 0 0 300px;
     transition: all 300ms ease-in-out;
+
     &.fullView {
         margin-left: 0;
         transition: all 300ms ease-in-out;
     }
+
     .container-fluid {
         padding: 0 30px;
     }
@@ -32,10 +46,19 @@ app-footer {
     margin-top: auto;
     margin-left: 300px;
     transition: all 300ms ease-in-out;
+
     &.fullView {
         margin-left: 0;
         transition: all 300ms ease-in-out;
     }
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
