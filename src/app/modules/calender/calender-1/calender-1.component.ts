@@ -164,6 +164,11 @@ export class Calender1Component {
       } else if (monthName == 'December') {
         this.next = true;
       }
+    } else if (view == CalendarView.Week) {
+      console.log(this.view);
+      console.log(this.viewDate);
+      this.previous = false;
+      this.next = false;
     }
   }
 
