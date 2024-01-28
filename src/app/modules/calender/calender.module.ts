@@ -14,13 +14,16 @@ import { CalenderRoutingModule } from './calender-routing.module';
 import { CalenderComponent } from './calender.component';
 import { CalenderIndexComponent } from './calender-index/calender-index.component';
 import { Calender1Component } from './calender-1/calender-1.component';
+import { CfcCalenderComponent } from './cfc-calender/cfc-calender.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
   declarations: [
     CalenderComponent,
     CalenderIndexComponent,
-    Calender1Component
+    Calender1Component,
+    CfcCalenderComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +36,7 @@ import { Calender1Component } from './calender-1/calender-1.component';
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
