@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,38 +10,35 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalenderRoutingModule } from './calender-routing.module';
+import { CalenderComponent } from './calender.component';
+import { CalenderIndexComponent } from './calender-index/calender-index.component';
+import { Calender1Component } from './calender-1/calender-1.component';
+import { CfcCalenderComponent } from './cfc-calender/cfc-calender.component';
+import { MatSelectModule } from '@angular/material/select';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ConfirmationComponent } from './common/confirmation/confirmation.component';
-import { HeaderComponent } from './common/header/header.component';
-import { FooterComponent } from './common/footer/footer.component';
-import { SideMenuComponent } from './common/side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ConfirmationComponent,
-    HeaderComponent,
-    FooterComponent,
-    SideMenuComponent
+    CalenderComponent,
+    CalenderIndexComponent,
+    Calender1Component,
+    CfcCalenderComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
+    CommonModule,
+    CalenderRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     NgbModalModule,
-    FlatpickrModule.forRoot(),
+    FlatpickrModule,
     MatIconModule,
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class CalenderModule { }

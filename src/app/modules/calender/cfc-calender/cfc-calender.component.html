@@ -1,0 +1,87 @@
+<div class="card mb-4">
+
+    <!-- card header -->
+    <div class="card-header">
+        <h2 class="mb-0">Calender Of {{ targetYear }}</h2>
+    </div>
+
+    <div class="card-body">
+
+
+        <div *ngIf="yearsList.length > 0" class="mt-2">
+            <mat-form-field appearance="outline" class="col-12 col-md-6 col-lg-6 mb-2">
+                <mat-label translate>Choose A Year</mat-label>
+                <mat-select panelClass="myPanelClass" (selectionChange)="selectYear($event)"
+                    [(ngModel)]="defaultChoosenYear">
+                    <mat-option *ngFor="let year of yearsList" [value]="year.value">
+                        <span translate>{{ year.text }}</span>
+                    </mat-option>
+                </mat-select>
+                <mat-icon matPrefix>calendar_today</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <h2 class="fw-bold">
+                    Edit events
+                </h2>
+            </div>
+
+            <div class="col-md-6 d-flex justify-content-end">
+                <div>
+                    <button class="btn btn-primary me-2" (click)="addEvent()">
+                        Add Event
+                    </button>
+                    <button class="btn btn-primary" (click)="sendEvents()">
+                        Send Events
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Starts at</th>
+                        <th>Ends at</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let event of events">
+                        <td>
+                            <input type="text" class="form-control" [(ngModel)]="event.title" />
+                        </td>
+                        <td>
+                            <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.start"
+                                [altInput]="true" [convertModelValue]="true" [enableTime]="true" minDate={{minDate}}
+                                maxDate={{maxDate}} dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
+                                placeholder="Not set" />
+                        </td>
+                        <td>
+                            <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.end"
+                                [altInput]="true" [convertModelValue]="true" [enableTime]="true" maxDate={{maxDate}}
+                                [minDate]="event.start" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
+                                placeholder="Not set" />
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteEvent(event)">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+</div>
