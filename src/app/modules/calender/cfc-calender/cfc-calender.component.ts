@@ -21,7 +21,7 @@ export class CfcCalenderComponent implements OnInit {
   targetYear: number = 0;
   minDate!: string;
   maxDate!: string;
-  yearsList: TextValueBindingResponseModel[] = [];;
+  yearsList: TextValueBindingResponseModel[] = [];
   defaultChoosenYear: number = 1;
 
   constructor(private activeRoute: ActivatedRoute) {

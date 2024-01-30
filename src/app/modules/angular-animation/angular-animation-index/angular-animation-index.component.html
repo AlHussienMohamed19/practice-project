@@ -1,0 +1,12 @@
+<div>
+    <h2>Angular Animation</h2>
+
+    <button (click)="onAnimate()" class="btn btn-primary me-2">Animate</button>
+    <button (click)="onShrink()" class="btn btn-secondary me-2">Shrink</button>
+
+    <div class="my-4" style="width: 100px; height: 10px;" [@divState]="state">
+    </div>
+    <br>
+    <div class="my-4" style="width: 100px; height: 100px;" [@wildState]="wildState">
+    </div>
+</div>

@@ -8,6 +8,11 @@ const routes: Routes = [
       import("./calender/calender.module").then(m => m.CalenderModule)
   },
   {
+    path: "angularAnimation",
+    loadChildren: () =>
+      import("./angular-animation/angular-animation.module").then(m => m.AngularAnimationModule)
+  },
+  {
     path: "lifeCycle",
     loadChildren: () =>
       import("./life-cycle/life-cycle.module").then(m => m.LifeCycleModule)

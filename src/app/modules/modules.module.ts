@@ -7,7 +7,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ModulesRoutingModule } from './modules-routing.module';
 import { ModulesComponent } from './modules.component';
-
+  
 
 @NgModule({
   declarations: [
