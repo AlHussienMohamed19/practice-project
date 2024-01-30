@@ -9,34 +9,26 @@
 
 
         <div *ngIf="yearsList.length > 0" class="mt-2">
-            <mat-form-field appearance="outline" class="col-12 col-md-6 col-lg-6 mb-2">
-                <mat-label translate>Choose A Year</mat-label>
+            <div class="d-flex justify-content-start align-items-center mb-2">
+                <mat-icon class="me-2 " matPrefix>filter_list</mat-icon>
+                <span class="filterSpan">Filter by year :</span>
+            </div>
+            <mat-form-field appearance="outline" class="col-12 col-md-4 col-lg-4 mb-2">
                 <mat-select panelClass="myPanelClass" (selectionChange)="selectYear($event)"
                     [(ngModel)]="defaultChoosenYear">
                     <mat-option *ngFor="let year of yearsList" [value]="year.value">
                         <span translate>{{ year.text }}</span>
                     </mat-option>
                 </mat-select>
-                <mat-icon matPrefix>calendar_today</mat-icon>
             </mat-form-field>
         </div>
+        
 
         <div class="row mb-2">
             <div class="col-md-6">
-                <h2 class="fw-bold">
-                    Edit events
+                <h2 class="fw-bold mb-1">
+                    All Events
                 </h2>
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-end">
-                <div>
-                    <button class="btn btn-primary me-2" (click)="addEvent()">
-                        Add Event
-                    </button>
-                    <button class="btn btn-primary" (click)="sendEvents()">
-                        Send Events
-                    </button>
-                </div>
             </div>
         </div>
 
@@ -54,6 +46,11 @@
                 </thead>
 
                 <tbody>
+                    <tr *ngIf="events.length === 0">
+                        <td style="text-align: center;" colspan="4">
+                            <h4 class="noEventsMsg">No Events Available</h4>
+                        </td>
+                    </tr>
                     <tr *ngFor="let event of events">
                         <td>
                             <input type="text" class="form-control" [(ngModel)]="event.title" />
@@ -81,6 +78,22 @@
         </div>
 
 
+        <div class="row my-2">
+            <div class="col-12 d-flex justify-content-center ">
+                <button type="button" class="addBtn d-flex justify-content-center align-items-center"
+                    (click)="addEvent()">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+
+
+        <hr class="primary">
+
+        <div class="col-12 text-end mb-3">
+            <button (click)="sendEvents()" type="button" mat-raised-button color="basic" class="mx-2"><span
+                    translate>Add Events</span></button>
+        </div>
     </div>
 
 

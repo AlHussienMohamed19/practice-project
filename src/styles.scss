@@ -66,3 +66,13 @@ body {
 .myPanelClass {
     margin-top: 33px !important;
 }
+.mat-mdc-text-field-wrapper {
+    height: 40px !important;
+}
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.mat-mdc-form-field-infix {
+    min-height: fit-content;
+}
