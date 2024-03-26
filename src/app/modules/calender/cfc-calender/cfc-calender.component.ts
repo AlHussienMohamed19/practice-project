@@ -15,28 +15,7 @@ import { TextValueBindingResponseModel } from 'src/app/@AppService/models/common
 })
 export class CfcCalenderComponent implements OnInit {
 
-  events: CalendarEvent[] = [
-    // {
-    //   start: subDays(startOfDay(new Date()), 1),
-    //   end: addDays(new Date(), 1),
-    //   title: 'A 3 day event',
-    // },
-    // {
-    //   start: startOfDay(new Date()),
-    //   title: 'An event with no end date',
-    // },
-    // {
-    //   start: subDays(endOfMonth(new Date()), 3),
-    //   end: addDays(endOfMonth(new Date()), 3),
-    //   title: 'A long event that spans 2 months',
-    // },
-    // {
-    //   start: addHours(startOfDay(new Date()), 2),
-    //   end: addHours(new Date(), 2),
-    //   title: 'A draggable and resizable event',
-    // },
-
-  ];
+  events: CalendarEvent[] = [];
 
   currentYear = new Date().getFullYear();
   targetYear: number = 0;
